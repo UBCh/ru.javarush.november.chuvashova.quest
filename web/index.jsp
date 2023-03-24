@@ -18,8 +18,8 @@
     <hr>
     <form action="${pageContext.request.contextPath}/init" method="POST" id="action">
         <label for="lname">как зовут тебя, мой юный друг?:</label><br>
-        <input type="text" id="lname" name="lname" value="Индиана Джонс"><br><br>
-        <input type="submit" id="submit" value="вперед, навстречу приключениям->">
+        <input type="text" id="lname" name="lname" value=""><br><br>
+        <input type="submit" id="submit" value="вперед, навстречу приключениям=>">
     </form>
 </section>
 </div>

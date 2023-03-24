@@ -9,6 +9,6 @@
     <script src="<c:url value="static/jquery-3.6.0.min.js"/>"></script>
 </head>
 <body>
-<button type="button" id="reStart_button" onclick="window.location=<%="'/reStart'"%>">return to the beginning</button>
+<button type="button" id="reStart_button" onclick="window.location=<%="'/reStart'"%>">reincarnation</button>
 </body>
 </html>

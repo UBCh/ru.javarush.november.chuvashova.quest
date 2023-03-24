@@ -17,7 +17,7 @@
         <option value="wrong"><%=Content.buttonWong.get(getLevel())%></option>
         <option value="right"><%=Content.rightButton.get(getLevel())%></option>
     </select>
-    <input type="submit" id="submit" value="смело шагай->">
+    <input type="submit" id="submit" value="смело шагай=>">
 </form>
 </body>
 </html>

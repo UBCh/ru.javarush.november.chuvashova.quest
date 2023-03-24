@@ -38,7 +38,7 @@ public class Content {
 	buttonWong.put(3,"Хватай добычу");
     }
 
-    static int level=1;
+    static int level=0;
 
     public static Map<Integer, String> getRightButton() {
 	return rightButton;

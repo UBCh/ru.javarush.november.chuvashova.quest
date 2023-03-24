@@ -131,11 +131,26 @@ hr{
 }
 
 img {
-    width: 1870px;
-    height: 800px;
+    width: 1890px;
+    height: 100%;
     opacity: 0.8;
 }
-label{
-    font-size: 25px;
+
+label {
+    font-size: 40px;
     color: #12105d;
+    width: 100%;
+}
+
+option {
+    font-size: 40px;
+    color: #12105d;
+    width: 300px;
+    height: auto;
+}
+select{
+    background-color: #ff00fb;
+    width: 500px;
+    height: auto;
+    font-size: 40px;
 }

@@ -28,10 +28,8 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
+     <%@ include file="/reStart.jsp" %>
    </section>
-    <%@ include file="/reStart.jsp" %>
-</div>
+   </div>
 </body>
 </html>
