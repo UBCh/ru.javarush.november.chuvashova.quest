@@ -17,6 +17,7 @@ public class LogicsServlet extends HttpServlet{
     Option choice;
       String path="/";
 String value="";
+int maxLevel=Content.getQuestions().size();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
@@ -33,20 +34,15 @@ String value="";
         resp.sendRedirect(path);
           }
 
+    private String choiceOfPath( int  level){
+        if (level<maxLevel){ return "/fundament.jsp";}
+        else if (level == maxLevel){return "/victory.jsp";}
+        return "/error.jsp";
+    }
 
 
 
-     private String choiceOfPath( int  level) {
-         switch (level) {
-             case 1,2: {
-                   return "/fundament.jsp";
-             }
-                        case 3:
-                 return "/victory.jsp";
-         }
 
-         return null;
-     }
 
 
 }

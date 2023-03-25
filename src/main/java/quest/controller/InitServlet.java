@@ -23,7 +23,6 @@ public class InitServlet extends HttpServlet {
 
 	resp.setContentType("text/html,charset=UTF-8");
 	name=req.getParameter("lname");
-
 	current = current + 1;
 	HttpSession session = req.getSession();
 	String idSession = session.getId();

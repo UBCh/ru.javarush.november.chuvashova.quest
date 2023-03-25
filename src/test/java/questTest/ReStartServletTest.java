@@ -52,4 +52,16 @@ class ReStartServletTest {
 	closeWindow();
     }
 
+
+    @DisplayName("from the last page should return to the start")
+    @Test
+    @Order(3)
+    void shouldMustReturnToStartError() {
+	open("/error.jsp");
+	$("#reStart_button").click();
+	$("#action").shouldBe(visible);
+	closeWindow();
+    }
+
+
 }

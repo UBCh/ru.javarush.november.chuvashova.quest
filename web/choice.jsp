@@ -12,8 +12,8 @@
 </head>
 <body>
 <form action="${pageContext.request.contextPath}/logic" method="POST">
-    <label for="choice">сделай свой выбор:</label><br>
-    <select id="choice" name="choice">
+    <label for="id_choice">сделай свой выбор:</label><br>
+    <select id="id_choice" name="choice">
         <option value="wrong"><%=Content.buttonWong.get(getLevel())%></option>
         <option value="right"><%=Content.rightButton.get(getLevel())%></option>
     </select>

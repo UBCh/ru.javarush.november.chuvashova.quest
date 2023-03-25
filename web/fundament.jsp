@@ -19,6 +19,7 @@
 <body>
 <header>
     <h2><%=Content.getHeader()%></h2>
+    <p><%=Content.getLevel()%></p>
 </header>
 
 <section>
@@ -32,8 +33,8 @@
     </nav>
 
     <article>
-        <p id="id_content"><%=Content.getQuestions().get(Content.getLevel())%>
-        </p>
+        <p id="id_content"><%=Content.getQuestions().get(Content.getLevel())%>        </p>
+
         <br>
         <br>
         <br>
