@@ -12,7 +12,8 @@
 <body>
 <img src='${pageContext.request.contextPath}/img/images.jpg' alt="pyramid">
 <section style="position:absolute; top: 1%; text-align: center;">
-    <h1 style="text-align:center;"><%=Content.getHeader()%></h1>
+    <h1 style="text-align:center;"><%=Content.getHeader()%>
+    </h1>
     <p><%=Content.getPrologue()%>
     </p>
     <hr>

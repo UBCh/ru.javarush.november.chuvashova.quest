@@ -18,7 +18,7 @@ class IndexServletTest {
     @BeforeAll
     static void setUpAll() {
 	SelenideLogger.addListener("allure", new AllureSelenide());
-	ChromeOptions options=new ChromeOptions();
+	ChromeOptions options = new ChromeOptions();
 	options.addArguments("--remote-allow-origins=*");
 	Configuration.browserCapabilities = options;
     }
@@ -37,11 +37,11 @@ class IndexServletTest {
 	open("/index.jsp");
 	$("#lname").setValue("johny");
 	$("#submit").click();
-//	var expected = "Player name : johny";
-	String expected ="johny";
-	String actual  =getValue($("#player_name").getText());
-	assertEquals(expected, actual);
+	String expected = "johny";
+	String actual = getValue($("#player_name").getText());
+	open("/reStart");
 	closeWindow();
+	assertEquals(expected, actual);
     }
 
     @Test
@@ -51,39 +51,39 @@ class IndexServletTest {
 	open("/index.jsp");
 	$("#lname").setValue("johny");
 	$("#submit").click();
-	sleep(7000);
-	String temp=$("#idSession").getText();
+	String temp = $("#idSession").getText();
 	String expected = getValue(temp);
-	closeWindow();
-	open("/index.jsp");
+	open("/reStart");
 	$("#submit").click();
-	String actual =getValue($("#idSession").getText());
-	assertNotEquals(expected, actual);
+	String actual = getValue($("#idSession").getText());
+	open("/reStart");
 	closeWindow();
-	    }
+	assertEquals(expected, actual);
+    }
 
     @Test
     @DisplayName("gotta get the game number")
     @Order(1)
-     public void shouldGetGameNumber() {
+    public void shouldGetGameNumber() {
 	open("/index.jsp");
 	$("#lname").setValue("johny");
 	$("#submit").click();
 	$("#id_content").shouldBe(visible);
-	int currentGame= Integer.parseInt(getValue($("#current_game").getText()));
+	int currentGame = Integer.parseInt(getValue($("#current_game").getText()));
 	closeWindow();
 	open("/index.jsp");
 	$("#submit").click();
-	int expected = currentGame+1;
-	  int actual = Integer.parseInt(getValue($("#current_game").getText()));
+	int expected = currentGame + 1;
+	int actual = Integer.parseInt(getValue($("#current_game").getText()));
+	open("/reStart");
+	closeWebDriver();
 	assertEquals(expected, actual);
     }
 
 
-        private   String  getValue(String value){
-	    String[] temp = value.split(":");
-		return temp[1].trim();
-	}
-
+    private String getValue(String value) {
+	String[] temp = value.split(":");
+	return temp[1].trim();
+    }
 
 }

@@ -22,7 +22,6 @@ class ContentTest {
 
     @Test
     @DisplayName("should return the level of the game")
-
     void shouldGetLevel() {
         int expected =content.level;
         int actual=content.getLevel();

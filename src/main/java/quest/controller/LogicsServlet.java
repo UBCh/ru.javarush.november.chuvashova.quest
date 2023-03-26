@@ -1,7 +1,6 @@
 package quest.controller;
 
 
-
 import quest.repositories.Content;
 
 import javax.servlet.ServletException;
@@ -13,36 +12,37 @@ import java.io.IOException;
 
 
 @WebServlet(name = "logicsServlet", value = "/logic")
-public class LogicsServlet extends HttpServlet{
+public class LogicsServlet extends HttpServlet {
     Option choice;
-      String path="/";
-String value="";
-int maxLevel=Content.getQuestions().size();
+    String path = "/";
+    String value = "";
+    int maxLevel = Content.getQuestions().size();
+
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html");
-       value = req.getParameter("choice");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws  IOException {
+	resp.setContentType("text/html");
+	value = req.getParameter("choice");
 
-       if (value.equals("right")) {
-           choice= Option.RIGHT;}
-       else if (value.equals("wrong")){ choice= Option.WRONG;}
+	if (value.equals("right")) {
+	    choice = Option.RIGHT;
+	} else if (value.equals("wrong")) {
+	    choice = Option.WRONG;
+	}
 
-           switch (choice){
-               case RIGHT ->  path=choiceOfPath(Content.getLevel());
-               case WRONG -> path="/fail";
-       }
-        resp.sendRedirect(path);
-          }
-
-    private String choiceOfPath( int  level){
-        if (level<maxLevel){ return "/fundament.jsp";}
-        else if (level == maxLevel){return "/victory.jsp";}
-        return "/error.jsp";
+	switch (choice) {
+	    case RIGHT -> path = choiceOfPath(Content.getLevel());
+	    case WRONG -> path = "/fail";
+	}
+	resp.sendRedirect(path);
     }
 
-
-
-
-
+    private String choiceOfPath(int level) {
+	if (level < maxLevel) {
+	    return "/fundament.jsp";
+	} else if (level == maxLevel) {
+	    return "/victory.jsp";
+	}
+	return "/error.jsp";
+    }
 
 }

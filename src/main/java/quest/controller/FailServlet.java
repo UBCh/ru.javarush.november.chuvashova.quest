@@ -8,7 +8,7 @@ import java.io.IOException;
 
 
 @WebServlet(name = "failServlet", value = "/fail")
-public class FailServlet  extends HttpServlet {
+public class FailServlet extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -17,7 +17,6 @@ public class FailServlet  extends HttpServlet {
 
 	response.sendRedirect("/fail.jsp");
 
-   }
-
+    }
 
 }

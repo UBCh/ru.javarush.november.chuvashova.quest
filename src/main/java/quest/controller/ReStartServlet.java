@@ -14,13 +14,11 @@ import java.io.IOException;
 public class ReStartServlet extends HttpServlet {
 
 
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 	response.setContentType("text/html;charset=UTF-8");
-	 Content.setLevel(0);
+	Content.setLevel(0);
 	response.sendRedirect("/index.jsp");
     }
-
 
 }

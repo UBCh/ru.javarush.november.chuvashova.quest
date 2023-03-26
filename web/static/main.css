@@ -11,6 +11,7 @@ body {
     position: relative;
     width: 100%;
 }
+
 /* Style the header */
 header {
     background-color: #666;
@@ -44,7 +45,6 @@ article {
 }
 
 
-
 /* Style the footer */
 footer {
     background-color: #777;
@@ -52,7 +52,7 @@ footer {
     color: #12105d;
 }
 
-button{
+button {
     border-radius: 25px;
     background: #73AD21;
     padding: 20px;
@@ -63,20 +63,43 @@ button{
 }
 
 @keyframes example {
-    0%   {background-color:red; left:0px; top:0px;}
-    25%  {background-color:yellow; left:200px; top:0px;}
-    50%  {background-color:blue; left:200px; top:200px;}
-    75%  {background-color:green; left:0px; top:200px;}
-    100% {background-color:red; left:0px; top:0px;}
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+    }
+    50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+    }
+    75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+    }
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
 }
-#action{
+
+#action {
     text-align: center;
 }
-h1{
+
+h1 {
     color: #ffffff;
     text-align: center;
     font-size: 50px;
 }
+
 p {
     color: #151444;
     text-align: center;
@@ -94,6 +117,7 @@ footer {
 input[type=text]:focus {
     background-color: #ff00fb;
 }
+
 input[type=submit] {
     border-radius: 1px;
     width: 100%;
@@ -107,9 +131,10 @@ input[type=submit] {
     margin: 4px 2px;
     cursor: pointer;
 }
-#lname{
+
+#lname {
     border: 2px solid red;
-    padding:  0em 1em;
+    padding: 0em 1em;
     border-radius: 10px;
     font-size: 25px;
     line-height: 2;
@@ -118,12 +143,12 @@ input[type=submit] {
     text-align: center;
 }
 
-hr{
+hr {
     border: 5px solid #4e0f73;
     border-radius: 5px;
 }
 
-#reStart_button{
+#reStart_button {
     height: 100px;
     width: 100%;
     font-size: 40px;
@@ -148,7 +173,8 @@ option {
     width: 300px;
     height: auto;
 }
-select{
+
+select {
     background-color: #ff00fb;
     width: 500px;
     height: auto;

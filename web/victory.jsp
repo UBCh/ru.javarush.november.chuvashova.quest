@@ -1,5 +1,5 @@
 <%@ page import="quest.repositories.Content" %>
-<%@ page contentType="text/html;charset=UTF-8"  %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>fail</title>
@@ -11,7 +11,8 @@
 <div class="container">
     <img src='${pageContext.request.contextPath}/img/istock.jpg'>
     <section style="position:absolute;top: 10%;text-align: center; width: 60%; height: auto;">
-        <p id="id_victory"><%=Content.getVictoryText()%></p>
+        <p id="id_victory"><%=Content.getVictoryText()%>
+        </p>
         <br>
         <br>
         <br>
@@ -39,7 +40,7 @@
         <br>
         <br>
         <%@ include file="/reStart.jsp" %>
-        </section>
-      </div>
+    </section>
+</div>
 </body>
 </html>

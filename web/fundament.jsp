@@ -12,14 +12,11 @@
     <title>fundament</title>
     <link href="/static/main.css" type="text/css" rel="stylesheet" />
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
-
     <script src="<c:url value="static/jquery-3.6.0.min.js"/>"></script>
 </head>
 <body>
 <header>
     <h2><%=Content.getHeader()%></h2>
-    <p><%=Content.getLevel()%></p>
 </header>
 
 <section>
