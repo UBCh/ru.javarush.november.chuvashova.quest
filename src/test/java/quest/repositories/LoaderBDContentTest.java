@@ -1,8 +1,12 @@
 package quest.repositories;
 
+import org.junit.jupiter.api.Test;
+
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LoaderBDContentTest {
 
@@ -24,9 +28,9 @@ public class LoaderBDContentTest {
     public static Map<Integer, String> answersFailTest = new HashMap<>();
     public static Map<Integer, String> rightButtonTest = new HashMap<>();
     public static Map<Integer, String> buttonWongTest = new HashMap<>();
-    public static String victoryTextTest = "";
-    public static String headerTest = "";
-    public static String prologueTest = "";
+    public static String victoryTextTest ="";
+    public static String headerTest ="";
+    public static String prologueTest ="";
 
 
     //доступ к бд
@@ -44,8 +48,7 @@ public class LoaderBDContentTest {
         victoryTextTest=(rs.getString(10));
         setContent(1,rs);
         for (int i = 2; i < levelMax+1; i++) {
-//	    rs = stmt.executeQuery(qwery+i);
-            rs.next();
+           rs.next();
             setContent(i,rs);
         }
     }
@@ -91,4 +94,6 @@ public class LoaderBDContentTest {
     public static String getPrologueTest() {
         return prologueTest;
     }
+
+
 }

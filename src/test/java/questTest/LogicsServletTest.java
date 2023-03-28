@@ -46,7 +46,7 @@ class LogicsServletTest {
 	sleep(5000);
 	$("#submit").click();
 	String expected = contentTest.getQuestionsTest().get(1);
-	String actual = $("#id_content").getText();
+	String actual = $("#id_content").getText().trim();
 	open("/reStart");
 	closeWebDriver();
 	assertEquals(expected, actual);
@@ -62,7 +62,7 @@ class LogicsServletTest {
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
 	String expected = contentTest.getQuestionsTest().get(2);
-	String actual = $("#id_content").getText();
+	String actual = $("#id_content").getText().trim();
 	open("/reStart");
 	closeWebDriver();
 	assertEquals(expected, actual);
@@ -80,7 +80,7 @@ class LogicsServletTest {
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
-	String actual = " " + $("#id_content").getText();
+	String actual =$("#id_content").getText().trim();
 	open("/reStart");
 	closeWebDriver();
 	assertEquals(expected, actual);
@@ -155,7 +155,7 @@ class LogicsServletTest {
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
-	String actual = " " + $("#id_victory").getText();
+	String actual =$("#id_victory").getText();
 	open("/reStart");
 	closeWebDriver();
 	assertEquals(expected, actual);
