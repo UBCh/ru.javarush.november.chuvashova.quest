@@ -18,7 +18,7 @@ public class ReStartServlet extends HttpServlet {
 
 	response.setContentType("text/html;charset=UTF-8");
 	Content.setLevel(0);
-	response.sendRedirect("/index.jsp");
+	response.sendRedirect("/start.jsp");
     }
 
 }

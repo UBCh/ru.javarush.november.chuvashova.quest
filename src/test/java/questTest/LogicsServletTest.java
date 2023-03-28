@@ -35,6 +35,7 @@ class LogicsServletTest {
     @Order(4)
     void shouldGiveQuestionNumberLevelOn() {
 	open("/index.jsp");
+	sleep(5000);
 	$("#submit").click();
 	String expected = Content.getQuestions().get(1);
 	String actual = $("#id_content").getText();
@@ -48,6 +49,7 @@ class LogicsServletTest {
     @Order(5)
     void shouldGiveQuestionNumberLevelTwo() {
 	open("/index.jsp");
+	sleep(5000);
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
@@ -63,6 +65,7 @@ class LogicsServletTest {
     @Order(6)
     void shouldGiveQuestionNumberLevelThree() {
 	open("/index.jsp");
+	sleep(5000);
 	button.click();
 	String expected = Content.getQuestions().get(3);
 	$("#id_choice").selectOptionByValue("right");
@@ -80,6 +83,7 @@ class LogicsServletTest {
     @Order(7)
     void shouldGiveFailNumberLevelOn() {
 	open("/index.jsp");
+	sleep(5000);
 	button.click();
 	String expected = Content.getAnswersFail().get(1);
 	$("#id_choice").selectOptionByValue("wrong");
@@ -95,6 +99,7 @@ class LogicsServletTest {
     @Order(8)
     void shouldGiveFailNumberLevelTwo() {
 	String expected = Content.getAnswersFail().get(2);
+	sleep(5000);
 	open("/index.jsp");
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
@@ -112,6 +117,7 @@ class LogicsServletTest {
     @Order(9)
     void shouldGiveFailNumberLevelThree() {
 	String expected = Content.getAnswersFail().get(3);
+	sleep(5000);
 	open("/index.jsp");
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
