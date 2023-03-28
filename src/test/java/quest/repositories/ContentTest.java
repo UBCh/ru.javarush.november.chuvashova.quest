@@ -17,6 +17,7 @@ class ContentTest {
 
     @BeforeEach
     void setUp() {
+
         content = new Content();
     }
 

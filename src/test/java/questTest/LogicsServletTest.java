@@ -7,6 +7,9 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 import quest.repositories.Content;
+import quest.repositories.LoaderBDContentTest;
+
+import java.sql.SQLException;
 
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,6 +18,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class LogicsServletTest {
 
     SelenideElement button = $("#submit");
+    LoaderBDContentTest contentTest=new LoaderBDContentTest();
+
+    LogicsServletTest() throws SQLException, ClassNotFoundException {
+    }
+
 
     @BeforeAll
     static void setUpAll() {
@@ -37,7 +45,7 @@ class LogicsServletTest {
 	open("/index.jsp");
 	sleep(5000);
 	$("#submit").click();
-	String expected = Content.getQuestions().get(1);
+	String expected = contentTest.getQuestionsTest().get(1);
 	String actual = $("#id_content").getText();
 	open("/reStart");
 	closeWebDriver();
@@ -53,7 +61,7 @@ class LogicsServletTest {
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
-	String expected = Content.getQuestions().get(2);
+	String expected = contentTest.getQuestionsTest().get(2);
 	String actual = $("#id_content").getText();
 	open("/reStart");
 	closeWebDriver();
@@ -67,7 +75,7 @@ class LogicsServletTest {
 	open("/index.jsp");
 	sleep(5000);
 	button.click();
-	String expected = Content.getQuestions().get(3);
+	String expected = contentTest.getQuestionsTest().get(3);
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
@@ -78,6 +86,8 @@ class LogicsServletTest {
 	assertEquals(expected, actual);
     }
 
+
+
     @DisplayName("should give fail according to the level1")
     @Test
     @Order(7)
@@ -85,7 +95,7 @@ class LogicsServletTest {
 	open("/index.jsp");
 	sleep(5000);
 	button.click();
-	String expected = Content.getAnswersFail().get(1);
+	String expected = contentTest.getAnswersFailTest().get(1);
 	$("#id_choice").selectOptionByValue("wrong");
 	button.click();
 	String actual = $("#id_fail").getText();
@@ -98,7 +108,7 @@ class LogicsServletTest {
     @Test
     @Order(8)
     void shouldGiveFailNumberLevelTwo() {
-	String expected = Content.getAnswersFail().get(2);
+	String expected = contentTest.getAnswersFailTest().get(2);
 	sleep(5000);
 	open("/index.jsp");
 	button.click();
@@ -116,7 +126,7 @@ class LogicsServletTest {
     @Test
     @Order(9)
     void shouldGiveFailNumberLevelThree() {
-	String expected = Content.getAnswersFail().get(3);
+	String expected = contentTest.getAnswersFailTest().get(3);
 	sleep(5000);
 	open("/index.jsp");
 	button.click();
@@ -127,6 +137,25 @@ class LogicsServletTest {
 	$("#id_choice").selectOptionByValue("wrong");
 	button.click();
 	String actual = $("#id_fail").getText();
+	open("/reStart");
+	closeWebDriver();
+	assertEquals(expected, actual);
+    }
+    @DisplayName("should give victory page")
+    @Test
+    @Order(10)
+    void shouldGiveVictoryPage() {
+	open("/index.jsp");
+	sleep(5000);
+	button.click();
+	String expected = contentTest.victoryTextTest;
+	$("#id_choice").selectOptionByValue("right");
+	button.click();
+	$("#id_choice").selectOptionByValue("right");
+	button.click();
+	$("#id_choice").selectOptionByValue("right");
+	button.click();
+	String actual = " " + $("#id_victory").getText();
 	open("/reStart");
 	closeWebDriver();
 	assertEquals(expected, actual);
