@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -30,37 +29,37 @@ class ReStartServletTest {
 
     @DisplayName("from the losing page should return to the start")
     @Test
-    @Order(10)
+    @Order(11)
     void shouldMustReturnToStartFail() {
 	open("/fail");
 	$("#reStart_button").click();
 	$("#action").shouldBe(visible);
 	open("/reStart");
 	closeWebDriver();
-	    }
+    }
 
 
     @DisplayName("from the last page should return to the start")
     @Test
-    @Order(11)
+    @Order(12)
     void shouldMustReturnToStartVictory() {
 	open("/victory.jsp");
 	$("#reStart_button").click();
 	$("#action").shouldBe(visible);
 	open("/reStart");
 	closeWebDriver();
-	    }
+    }
 
 
     @DisplayName("from the last page should return to the start")
     @Test
-    @Order(12)
+    @Order(13)
     void shouldMustReturnToStartError() {
 	open("/error.jsp");
 	$("#reStart_button").click();
 	$("#action").shouldBe(visible);
 	open("/reStart");
 	closeWebDriver();
-	    }
+    }
 
 }

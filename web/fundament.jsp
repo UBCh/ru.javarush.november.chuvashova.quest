@@ -1,9 +1,4 @@
-
-
-
 <%@ page import="quest.repositories.Content" %>
-
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% Content.plusLevel();%>
 <!DOCTYPE html>
@@ -31,7 +26,6 @@
 
     <article>
         <p id="id_content"><%=Content.getQuestions().get(Content.getLevel())%>        </p>
-
         <br>
         <br>
         <br>
@@ -40,7 +34,6 @@
         <br>
         <br>
         <br>
-
     </article>
 </section>
 
@@ -48,8 +41,6 @@
     <h3 id="idSession">ID session : ${idSession}</h3>
     <h3 id="player_name">Player name : ${name}</h3>
     <h3 id="current_game">Current game: ${current}</h3>
-    <h3 id="level">Level game: ${level}</h3>
-
-</footer>
+  </footer>
 </body>
 </html>

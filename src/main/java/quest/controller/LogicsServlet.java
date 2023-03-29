@@ -2,8 +2,6 @@ package quest.controller;
 
 
 import quest.repositories.Content;
-
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +17,7 @@ public class LogicsServlet extends HttpServlet {
     int maxLevel = Content.getQuestions().size();
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws  IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 	resp.setContentType("text/html");
 	value = req.getParameter("choice");
 

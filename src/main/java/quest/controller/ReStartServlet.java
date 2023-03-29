@@ -2,7 +2,6 @@ package quest.controller;
 
 
 import quest.repositories.Content;
-
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +17,7 @@ public class ReStartServlet extends HttpServlet {
 
 	response.setContentType("text/html;charset=UTF-8");
 	Content.setLevel(0);
-	response.sendRedirect("/index.jsp");
+	response.sendRedirect("/start.jsp");
     }
 
 }
