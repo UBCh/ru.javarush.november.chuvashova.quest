@@ -19,8 +19,9 @@ public class StartServlet extends HttpServlet {
 	    activateContent();
 	} catch (SQLException e) {
 	    e.printStackTrace();
+	    resp.sendRedirect("/error.jsp");
 	} catch (ClassNotFoundException e) {
-	    e.printStackTrace();
+	    e.printStackTrace();  resp.sendRedirect("/error.jsp");
 	}
 	resp.sendRedirect("/start.jsp");
 
