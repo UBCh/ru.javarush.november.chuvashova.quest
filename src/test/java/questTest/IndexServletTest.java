@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class IndexServletTest {

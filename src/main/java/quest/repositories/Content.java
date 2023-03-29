@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class Content<level> {
+public class Content {
 
     public static Map<Integer, String> questions = new HashMap<>();
     public static Map<Integer, String> answersFail = new HashMap<>();

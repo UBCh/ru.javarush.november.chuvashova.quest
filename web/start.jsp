@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>START</title>
     <link href="static/main.css" rel="stylesheet">
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <script src="<c:url value="static/jquery-3.6.0.min.js"/>"></script>
@@ -17,8 +17,8 @@
     <p><%=Content.getPrologue()%>
     </p>
     <hr>
-    <form action="${pageContext.request.contextPath}/init" method="POST" id="action">
-        <label for="lname">как зовут тебя, мой юный друг?:</label><br>
+    <form action="${pageContext.request.contextPath}/init" method="POST" id="action" accept-charset="windows-1251">
+        <label for="lname" >как зовут тебя, мой юный друг?:</label><br>
         <input type="text" id="lname" name="lname" value=""><br><br>
         <input type="submit" id="submit" value="вперед, навстречу приключениям=>">
     </form>

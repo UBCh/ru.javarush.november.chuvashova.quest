@@ -1,16 +1,12 @@
 package quest.repositories;
 
-import org.junit.jupiter.api.Test;
-
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+public class LoaderBDContentForTest {
 
-public class LoaderBDContentTest {
-
-    public LoaderBDContentTest() throws SQLException, ClassNotFoundException {
+    public LoaderBDContentForTest() throws SQLException, ClassNotFoundException {
         searchValue();
 
     }
@@ -33,10 +29,10 @@ public class LoaderBDContentTest {
     public static String prologueTest ="";
 
 
-    //доступ к бд
+
 
     public static void searchValue() throws SQLException, ClassNotFoundException {
-        String qwery="SELECT * FROM `bd_quest` WHERE ";   //  позволяет выбрать конкретную строку
+        String qwery="SELECT * FROM `bd_quest` WHERE ";
         Class.forName("com.mysql.jdbc.Driver");
         con = DriverManager.getConnection(url, user, password);
         stmt = con.createStatement( );

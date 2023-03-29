@@ -6,8 +6,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.chrome.ChromeOptions;
-import quest.repositories.Content;
-import quest.repositories.LoaderBDContentTest;
+import quest.repositories.LoaderBDContentForTest;
 
 import java.sql.SQLException;
 
@@ -18,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class LogicsServletTest {
 
     SelenideElement button = $("#submit");
-    LoaderBDContentTest contentTest=new LoaderBDContentTest();
+    LoaderBDContentForTest contentTest = new LoaderBDContentForTest();
 
     LogicsServletTest() throws SQLException, ClassNotFoundException {
     }
@@ -28,7 +27,7 @@ class LogicsServletTest {
     static void setUpAll() {
 	SelenideLogger.addListener("allure", new AllureSelenide());
 	Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
-	
+
     }
 
     @AfterAll
@@ -45,12 +44,12 @@ class LogicsServletTest {
 	open("/index.jsp");
 	sleep(5000);
 	$("#submit").click();
-	String expected = contentTest.getQuestionsTest().get(1);
-	String actual = $("#id_content").getText().trim();
+	String expected = LoaderBDContentForTest.getQuestionsTest().get(1);
+	String actual = $("#id_content").getText();
 	open("/reStart");
 	closeWebDriver();
 	assertEquals(expected, actual);
-	    }
+    }
 
     @DisplayName("should give question according to the level2")
     @Test
@@ -61,8 +60,8 @@ class LogicsServletTest {
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
-	String expected = contentTest.getQuestionsTest().get(2);
-	String actual = $("#id_content").getText().trim();
+	String expected = LoaderBDContentForTest.getQuestionsTest().get(2);
+	String actual = $("#id_content").getText();
 	open("/reStart");
 	closeWebDriver();
 	assertEquals(expected, actual);
@@ -75,17 +74,16 @@ class LogicsServletTest {
 	open("/index.jsp");
 	sleep(5000);
 	button.click();
-	String expected = contentTest.getQuestionsTest().get(3);
+	String expected = LoaderBDContentForTest.getQuestionsTest().get(3);
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
-	String actual =$("#id_content").getText().trim();
+	String actual = $("#id_content").getText();
 	open("/reStart");
 	closeWebDriver();
 	assertEquals(expected, actual);
     }
-
 
 
     @DisplayName("should give fail according to the level1")
@@ -95,7 +93,7 @@ class LogicsServletTest {
 	open("/index.jsp");
 	sleep(5000);
 	button.click();
-	String expected = contentTest.getAnswersFailTest().get(1);
+	String expected = LoaderBDContentForTest.getAnswersFailTest().get(1);
 	$("#id_choice").selectOptionByValue("wrong");
 	button.click();
 	String actual = $("#id_fail").getText();
@@ -108,7 +106,7 @@ class LogicsServletTest {
     @Test
     @Order(8)
     void shouldGiveFailNumberLevelTwo() {
-	String expected = contentTest.getAnswersFailTest().get(2);
+	String expected = LoaderBDContentForTest.getAnswersFailTest().get(2);
 	sleep(5000);
 	open("/index.jsp");
 	button.click();
@@ -126,7 +124,7 @@ class LogicsServletTest {
     @Test
     @Order(9)
     void shouldGiveFailNumberLevelThree() {
-	String expected = contentTest.getAnswersFailTest().get(3);
+	String expected = LoaderBDContentForTest.getAnswersFailTest().get(3);
 	sleep(5000);
 	open("/index.jsp");
 	button.click();
@@ -141,6 +139,7 @@ class LogicsServletTest {
 	closeWebDriver();
 	assertEquals(expected, actual);
     }
+
     @DisplayName("should give victory page")
     @Test
     @Order(10)
@@ -148,14 +147,14 @@ class LogicsServletTest {
 	open("/index.jsp");
 	sleep(5000);
 	button.click();
-	String expected = contentTest.victoryTextTest;
+	String expected = LoaderBDContentForTest.victoryTextTest;
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
-	String actual =$("#id_victory").getText();
+	String actual = $("#id_victory").getText();
 	open("/reStart");
 	closeWebDriver();
 	assertEquals(expected, actual);
