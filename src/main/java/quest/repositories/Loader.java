@@ -13,7 +13,7 @@ public class Loader {
     private static Statement stmt;
     private static ResultSet rs;
 
-    //доступ к бд
+
 
     public static void searchValue() throws SQLException, ClassNotFoundException {
 	String qwery = "SELECT * FROM `bd_quest` WHERE ";
