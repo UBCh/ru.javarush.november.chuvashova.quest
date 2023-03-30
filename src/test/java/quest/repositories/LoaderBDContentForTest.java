@@ -51,7 +51,7 @@ public class LoaderBDContentForTest {
 
 
 
-    // формирование данных Content из БД
+
     public static void setContent(int level, ResultSet rsv) throws SQLException {
         questionsTest.put(level,rsv.getString(6));
        answersFailTest.put(level,rsv.getString(7));

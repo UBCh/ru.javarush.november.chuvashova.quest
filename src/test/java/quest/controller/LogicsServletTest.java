@@ -6,6 +6,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.chrome.ChromeOptions;
+import quest.repositories.Content;
 import quest.repositories.LoaderBDContentForTest;
 
 import java.sql.SQLException;
@@ -74,16 +75,18 @@ class LogicsServletTest {
 	open("/index.jsp");
 	sleep(5000);
 	button.click();
-	String expected = LoaderBDContentForTest.getQuestionsTest().get(3);
+	var expected = LoaderBDContentForTest.getQuestionsTest().get(3).getBytes();
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
-	String actual = $("#id_content").getText();
+	var actual = $("#id_content").getText().getBytes();
 	open("/reStart");
 	closeWebDriver();
-	assertEquals(expected, actual);
-    }
+	for (int i = 0; i < actual.length; i++) {
+	    assertEquals(expected[i], actual[i]);
+	}
+	    }
 
 
     @DisplayName("should give fail according to the level1")
