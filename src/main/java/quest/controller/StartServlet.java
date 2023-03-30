@@ -13,17 +13,18 @@ import java.sql.SQLException;
 @WebServlet(name = "startServlet", value = "/start")
 public class StartServlet extends HttpServlet {
 
+    String path="/start.jsp";
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	try {
 	    activateContent();
 	} catch (SQLException e) {
-	    e.printStackTrace();
+	   path="error.jsp";
 
 	} catch (ClassNotFoundException e) {
-	    e.printStackTrace();
+	    path="error.jsp";
 	}
-	resp.sendRedirect("/start.jsp");
+	resp.sendRedirect(path);
 
     }
 
