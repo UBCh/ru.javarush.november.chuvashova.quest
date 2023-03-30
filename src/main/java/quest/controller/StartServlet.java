@@ -13,23 +13,23 @@ import java.sql.SQLException;
 @WebServlet(name = "startServlet", value = "/start")
 public class StartServlet extends HttpServlet {
 
-    String path="/start.jsp";
+     static String path="/start.jsp";
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	try {
 	    activateContent();
 	} catch (SQLException e) {
-	   path="error.jsp";
+	   path="/error.jsp";
 
 	} catch (ClassNotFoundException e) {
-	    path="error.jsp";
+	    path="/error.jsp";
 	}
 	resp.sendRedirect(path);
 
     }
 
 
-    private void activateContent() throws SQLException, ClassNotFoundException {
+    void activateContent() throws SQLException, ClassNotFoundException {
 	Loader loader = new Loader();
 	loader.searchValue();
     }

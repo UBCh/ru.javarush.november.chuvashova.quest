@@ -1,4 +1,4 @@
-package questTest;
+package quest.controller;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
