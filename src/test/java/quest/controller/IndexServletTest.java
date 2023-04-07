@@ -1,6 +1,7 @@
 package quest.controller;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
@@ -13,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class IndexServletTest {
 
+    SelenideElement button = $("#submit");
 
     @BeforeAll
     static void setUpAll() {
@@ -31,9 +33,10 @@ class IndexServletTest {
 
     @Test
     @DisplayName("the user entered his name, and it was saved in the session")
-    @Order(3)
+    @Order(5)
     public void shouldStoreName() {
 	open("/index.jsp");
+	button.click();
 	$("#lname").setValue("johny");
 	$("#submit").click();
 	String expected = "johny";
@@ -45,15 +48,19 @@ class IndexServletTest {
 
     @Test
     @DisplayName("should get session id")
-    @Order(2)
+    @Order(4)
     public void shouldGetSessionId() {
 	open("/index.jsp");
+	button.click();
+	sleep(3000);
 	$("#lname").setValue("johny");
 	$("#submit").click();
 	String temp = $("#idSession").getText();
 	String expected = getValue(temp);
 	open("/reStart");
 	$("#submit").click();
+	sleep(2000);
+	button.click();
 	String actual = getValue($("#idSession").getText());
 	open("/reStart");
 	closeWindow();
@@ -62,16 +69,19 @@ class IndexServletTest {
 
     @Test
     @DisplayName("gotta get the game number")
-    @Order(1)
+    @Order(3)
     public void shouldGetGameNumber() {
 	open("/index.jsp");
+	button.click();
 	$("#lname").setValue("johny");
-	$("#submit").click();
+	button.click();
 	$("#id_content").shouldBe(visible);
 	int currentGame = Integer.parseInt(getValue($("#current_game").getText()));
 	closeWindow();
 	open("/index.jsp");
-	$("#submit").click();
+	button.click();
+	sleep(3000);
+	button.click();
 	int expected = currentGame + 1;
 	int actual = Integer.parseInt(getValue($("#current_game").getText()));
 	open("/reStart");

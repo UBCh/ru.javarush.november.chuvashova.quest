@@ -2,6 +2,8 @@ package quest.controller.servlets;
 
 
 import quest.controller.DispatherQuest.DisperserQuest;
+
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,9 +18,11 @@ public class LogicsServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	int currentLevel= Integer.parseInt(DisperserQuest.PAGE_CONTENT_by_LEVEL.get(0).get(3));
 	Option choice = null;
 	String path = "/";
 	String value = "";
+
 	resp.setContentType("text/html");
 	value = req.getParameter("choice");
 
@@ -29,11 +33,14 @@ public class LogicsServlet extends HttpServlet {
 	}
 
 	switch (choice) {
-	    case RIGHT -> path = choiceOfPath(Integer.parseInt(DisperserQuest.PAGE_CONTENT_by_LEVEL.get(0).get(3)));
+	    case RIGHT -> path = choiceOfPath(currentLevel);
 
 	    case WRONG -> path = "/fail";
 	}
 	resp.sendRedirect(path);
+	String level= String.valueOf(currentLevel+1);
+	DisperserQuest.PAGE_CONTENT_by_LEVEL.get(0).set(3,level);
+
     }
 
     private String choiceOfPath(int level) {
@@ -45,4 +52,8 @@ public class LogicsServlet extends HttpServlet {
 	return "/error.jsp";
     }
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	doPost(req,resp);
+    }
 }

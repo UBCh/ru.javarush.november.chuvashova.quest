@@ -3,7 +3,7 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="quest.controller.DispatherQuest.DisperserQuest" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%   DisperserQuest.PAGE_CONTENT_by_LEVEL.get(0).set(3, String.valueOf(0));
+
 %>
 <!DOCTYPE html>
 <html>

@@ -39,10 +39,12 @@ class LogicsServletTest {
 
     @DisplayName("should give question according to the level1")
     @Test
-    @Order(4)
+    @Order(6)
     void shouldGiveQuestionNumberLevelOn() {
 	open("/index.jsp");
-	sleep(5000);
+	sleep(2000);
+	$("#submit").click();
+	sleep(2000);
 	$("#submit").click();
 	String expected = LoaderBDContentForTest.getQuestionsTest().get(1);
 	String actual = $("#id_content").getText();
@@ -53,10 +55,11 @@ class LogicsServletTest {
 
     @DisplayName("should give question according to the level2")
     @Test
-    @Order(5)
+    @Order(7)
     void shouldGiveQuestionNumberLevelTwo() {
 	open("/index.jsp");
-	sleep(5000);
+	button.click();
+	sleep(2000);
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
 	button.click();
@@ -69,10 +72,11 @@ class LogicsServletTest {
 
     @DisplayName("should give question according to the level3")
     @Test
-    @Order(6)
+    @Order(8)
     void shouldGiveQuestionNumberLevelThree() {
 	open("/index.jsp");
-	sleep(5000);
+	button.click();
+	sleep(2000);
 	button.click();
 	var expected = LoaderBDContentForTest.getQuestionsTest().get(3).getBytes();
 	$("#id_choice").selectOptionByValue("right");
@@ -90,10 +94,11 @@ class LogicsServletTest {
 
     @DisplayName("should give fail according to the level1")
     @Test
-    @Order(7)
+    @Order(9)
     void shouldGiveFailNumberLevelOn() {
 	open("/index.jsp");
-	sleep(5000);
+	button.click();
+	sleep(2000);
 	button.click();
 	String expected = LoaderBDContentForTest.getAnswersFailTest().get(1);
 	$("#id_choice").selectOptionByValue("wrong");
@@ -106,15 +111,18 @@ class LogicsServletTest {
 
     @DisplayName("should give fail according to the level2")
     @Test
-    @Order(8)
+    @Order(10)
     void shouldGiveFailNumberLevelTwo() {
 	String expected = LoaderBDContentForTest.getAnswersFailTest().get(2);
-	sleep(5000);
 	open("/index.jsp");
 	button.click();
+	sleep(5000);
+	button.click();
 	$("#id_choice").selectOptionByValue("right");
+	sleep(5000);
 	button.click();
 	$("#id_choice").selectOptionByValue("wrong");
+	sleep(5000);
 	button.click();
 	String actual = $("#id_fail").getText();
 	open("/reStart");
@@ -124,19 +132,24 @@ class LogicsServletTest {
 
     @DisplayName("should give fail according to the level3")
     @Test
-    @Order(9)
+    @Order(11)
     void shouldGiveFailNumberLevelThree() {
 	String expected = LoaderBDContentForTest.getAnswersFailTest().get(3);
-	sleep(5000);
 	open("/index.jsp");
 	button.click();
-	$("#id_choice").selectOptionByValue("right");
+	sleep(5000);
 	button.click();
 	$("#id_choice").selectOptionByValue("right");
+	sleep(5000);
+	button.click();
+	$("#id_choice").selectOptionByValue("right");
+	sleep(5000);
 	button.click();
 	$("#id_choice").selectOptionByValue("wrong");
+	sleep(5000);
 	button.click();
 	String actual = $("#id_fail").getText();
+	sleep(5000);
 	open("/reStart");
 	closeWebDriver();
 	assertEquals(expected, actual);
@@ -144,10 +157,11 @@ class LogicsServletTest {
 
     @DisplayName("should give victory page")
     @Test
-    @Order(10)
+    @Order(12)
     void shouldGiveVictoryPage() {
 	open("/index.jsp");
-	sleep(5000);
+	button.click();
+	sleep(2000);
 	button.click();
 	String expected = LoaderBDContentForTest.victoryTextTest;
 	$("#id_choice").selectOptionByValue("right");

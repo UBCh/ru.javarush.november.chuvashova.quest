@@ -32,11 +32,11 @@ public class LoaderBDContentForTest {
 
 
     public static void searchValue() throws SQLException, ClassNotFoundException {
-        String qwery="SELECT * FROM `bd_quest` WHERE ";
+        String qwery="SELECT * FROM `bd_quest`";
         Class.forName("com.mysql.jdbc.Driver");
         con = DriverManager.getConnection(url, user, password);
         stmt = con.createStatement( );
-        rs = stmt.executeQuery(qwery+"1");
+        rs = stmt.executeQuery(qwery);
         rs.next();
         levelMax=rs.getInt(5);
         headerTest=(rs.getString(3));

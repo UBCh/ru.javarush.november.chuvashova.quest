@@ -1,6 +1,9 @@
 package quest.controller.servlets;
 
 
+import org.eclipse.jetty.server.Dispatcher;
+import quest.controller.DispatherQuest.DisperserQuest;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +19,7 @@ public class InitServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
+	DisperserQuest.PAGE_CONTENT_by_LEVEL.get(0).set(3,"1");
 	resp.setContentType("text/html,charset=UTF-8");
 	String name = req.getParameter("lname");
 	current = current + 1;
