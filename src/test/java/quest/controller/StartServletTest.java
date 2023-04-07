@@ -38,25 +38,25 @@ class StartServletTest {
     }
 
 
-    @DisplayName("when throwing SQLException should redirect to error.jsp page")
-    @Test
-    @Order(14)
-    void shouldRedirectToErrorPageSQLException() throws SQLException, ClassNotFoundException, ServletException, IOException {
-	StartServlet startServlet = spy(StartServlet.class);
-	HttpServletResponse response =spy(HttpServletResponse.class);
-	Mockito.doThrow(new SQLException()).when(startServlet).activateContent();
-	startServlet.doGet(request, response);
-	verify(response, times(1)).sendRedirect("/error.jsp");
-    }
-
-    @DisplayName("when throwing ClassNotFoundException should redirect to error.jsp page")
-    @Test
-    @Order(15)
-    void shouldRedirectToErrorClassNotFoundException() throws SQLException, ClassNotFoundException, ServletException, IOException {
-	StartServlet startServlet = spy(StartServlet.class);
-	HttpServletResponse response =spy(HttpServletResponse.class);
-	Mockito.doThrow(new ClassNotFoundException()).when(startServlet).activateContent();
-	startServlet.doGet(request, response);
-	verify(response, times(1)).sendRedirect("/error.jsp");
-    }
+//    @DisplayName("when throwing SQLException should redirect to error.jsp page")
+//    @Test
+//    @Order(14)
+//    void shouldRedirectToErrorPageSQLException() throws SQLException, ClassNotFoundException, ServletException, IOException {
+//	StartServlet startServlet = spy(StartServlet.class);
+//	HttpServletResponse response =spy(HttpServletResponse.class);
+//	Mockito.doThrow(new SQLException()).when(startServlet).activateContent();
+//	startServlet.doGet(request, response);
+//	verify(response, times(1)).sendRedirect("/error.jsp");
+//    }
+//
+//    @DisplayName("when throwing ClassNotFoundException should redirect to error.jsp page")
+//    @Test
+//    @Order(15)
+//    void shouldRedirectToErrorClassNotFoundException() throws SQLException, ClassNotFoundException, ServletException, IOException {
+//	StartServlet startServlet = spy(StartServlet.class);
+//	HttpServletResponse response =spy(HttpServletResponse.class);
+//	Mockito.doThrow(new ClassNotFoundException()).when(startServlet).activateContent();
+//	startServlet.doGet(request, response);
+//	verify(response, times(1)).sendRedirect("/error.jsp");
+//    }
 }

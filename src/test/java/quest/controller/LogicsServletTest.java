@@ -6,7 +6,6 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.chrome.ChromeOptions;
-import quest.repositories.Content;
 import quest.repositories.LoaderBDContentForTest;
 
 import java.sql.SQLException;

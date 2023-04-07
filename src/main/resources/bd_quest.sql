@@ -24,8 +24,8 @@ SET time_zone = "+00:00";
 
 --
 -- Структура таблицы `bd_quest`
---
-
+CREATE DATABASE IF NOT EXISTS bd_quest;
+USE bd_quest;
 CREATE TABLE IF NOT EXISTS `bd_quest` (
   `level` text NOT NULL,
   `header` text NOT NULL,

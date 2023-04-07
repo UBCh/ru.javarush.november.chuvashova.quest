@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%@ page import="static quest.repositories.Content.*" %>
-<%@ page import="quest.repositories.Content" %>
+<%! int level= Integer.parseInt(DisperserQuest.PAGE_CONTENT_by_LEVEL.get(0).get(3));%>
 <html>
 <head>
     <title>choice</title>
@@ -13,9 +12,9 @@
 <form action="${pageContext.request.contextPath}/logic" method="POST">
     <label for="id_choice">сделай свой выбор:</label><br>
     <select id="id_choice" name="choice">
-        <option value="wrong"><%=Content.buttonWong.get(getLevel())%>
+        <option value="wrong"><%=DisperserQuest.PAGE_CONTENT_by_LEVEL.get(level).get(3)%>
         </option>
-        <option value="right"><%=Content.rightButton.get(getLevel())%>
+        <option value="right"><%=DisperserQuest.PAGE_CONTENT_by_LEVEL.get(level).get(2)%>
         </option>
     </select>
     <input type="submit" id="submit" value="смело шагай=>">
