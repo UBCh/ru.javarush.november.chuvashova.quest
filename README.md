@@ -39,7 +39,7 @@
 
 ## не удалось
 - не удалось настроить кодировку имени игрока, хранящегося в сессии на кариллице.
-- при запуске тестов командой mvn - test падает часть тестов из [LogicsServletTest](https://github.com/UBCh/ru.javarush.november.chuvashova.quest/blob/818246913922638127de686dd12b831ef4dc89b1/src/test/java/questTest/LogicsServletTest.java#L73)
+
 
 
 
