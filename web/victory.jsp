@@ -1,4 +1,5 @@
-<%@ page import="quest.repositories.Content" %>
+<%@ page import="com.example.quest.repositories.contents.ContentQuest" %>
+<%@ page import="com.example.quest.controller.DispatherQuest.DisperserQuest" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -11,7 +12,7 @@
 <div class="container">
     <img src='${pageContext.request.contextPath}/img/istock.jpg'>
     <section style="position:absolute;top: 10%;text-align: center; width: 60%; height: auto;">
-        <p id="id_victory"><%=Content.getVictoryText()%>
+        <p id="id_victory"><%=DisperserQuest.PAGE_CONTENT_by_LEVEL.get(0).get(2)%>
         </p>
         <br>
         <br>
