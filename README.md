@@ -42,7 +42,7 @@
 
 ## отчет
 
-- посмотреть  [отчет](https://github.com/UBCh/ru.javarush.november.chuvashova.quest/blob/three/report/ScreenQuest.mp4) о работе приложения
+- посмотреть  [отчет](https://github.com/UBCh/ru.javarush.november.chuvashova.quest/tree/three/report) о работе приложения
 
 
 
