@@ -1,10 +1,8 @@
-<%@ page import="quest.repositories.contents.ContentQuest" %>
-<%@ page import="quest.repositories.dispather.DispatcherRepository" %>
-<%@ page import="java.sql.SQLException" %>
-<%@ page import="quest.controller.DispatherQuest.DisperserQuest" %>
+<%@ page import="com.example.quest.controller.DispatherQuest.DisperserQuest" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-%>
+
 <!DOCTYPE html>
 <html>
 <head>

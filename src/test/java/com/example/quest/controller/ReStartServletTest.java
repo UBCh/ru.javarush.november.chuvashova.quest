@@ -1,12 +1,12 @@
-package quest.controller;
+package com.example.quest.controller;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import com.example.quest.repositories.LoaderBDContentForTest;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.chrome.ChromeOptions;
-import quest.repositories.LoaderBDContentForTest;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;

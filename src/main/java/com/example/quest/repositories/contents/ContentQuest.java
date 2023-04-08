@@ -1,7 +1,7 @@
-package quest.repositories.contents;
+package com.example.quest.repositories.contents;
 
-import quest.repositories.databaseIngector.Loader;
-import quest.controller.DispatherQuest.NameBD;
+import com.example.quest.repositories.databaseIngector.Loader;
+import com.example.quest.controller.DispatherQuest.NameBD;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

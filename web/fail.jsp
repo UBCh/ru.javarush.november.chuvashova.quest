@@ -1,4 +1,4 @@
-<%@ page import="quest.controller.DispatherQuest.DisperserQuest" %>
+<%@ page import="com.example.quest.controller.DispatherQuest.DisperserQuest" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% int level= Integer.parseInt(DisperserQuest.PAGE_CONTENT_by_LEVEL.get(0).get(3))-1;%>
 <!DOCTYPE html>

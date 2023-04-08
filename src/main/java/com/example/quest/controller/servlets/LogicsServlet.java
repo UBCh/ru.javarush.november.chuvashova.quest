@@ -1,7 +1,7 @@
-package quest.controller.servlets;
+package com.example.quest.controller.servlets;
 
 
-import quest.controller.DispatherQuest.DisperserQuest;
+import com.example.quest.controller.DispatherQuest.DisperserQuest;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,9 +33,9 @@ public class LogicsServlet extends HttpServlet {
 	}
 
 	switch (choice) {
-	    case RIGHT -> path = choiceOfPath(currentLevel);
+	    case RIGHT :{path = choiceOfPath(currentLevel); break;}
 
-	    case WRONG -> path = "/fail";
+	    case WRONG :{path = "/fail"; break;}
 	}
 	resp.sendRedirect(path);
 	String level= String.valueOf(currentLevel+1);

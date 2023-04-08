@@ -1,4 +1,4 @@
-package quest.repositories.contents;
+package com.example.quest.repositories.contents;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;

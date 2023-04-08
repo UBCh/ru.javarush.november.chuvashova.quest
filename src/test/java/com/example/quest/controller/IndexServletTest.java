@@ -1,4 +1,4 @@
-package quest.controller;
+package com.example.quest.controller;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;

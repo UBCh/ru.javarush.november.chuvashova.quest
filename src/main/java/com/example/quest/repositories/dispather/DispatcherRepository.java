@@ -1,8 +1,8 @@
-package quest.repositories.dispather;
+package com.example.quest.repositories.dispather;
 
-import quest.repositories.contents.ContentQuest;
-import quest.controller.DispatherQuest.NameBD;
-import quest.repositories.contents.Quest;
+import com.example.quest.repositories.contents.ContentQuest;
+import com.example.quest.controller.DispatherQuest.NameBD;
+import com.example.quest.repositories.contents.Quest;
 
 import java.sql.SQLException;
 import java.util.Map;

@@ -1,7 +1,7 @@
-package quest.controller.servlets;
+package com.example.quest.controller.servlets;
 
 
-import quest.controller.DispatherQuest.DisperserQuest;
+import com.example.quest.controller.DispatherQuest.DisperserQuest;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

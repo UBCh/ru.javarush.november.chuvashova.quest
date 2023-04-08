@@ -1,6 +1,6 @@
-package quest.controller.DispatherQuest;
+package com.example.quest.controller.DispatherQuest;
 
-import quest.repositories.dispather.DispatcherRepository;
+import com.example.quest.repositories.dispather.DispatcherRepository;
 
 import java.util.ArrayList;
 import java.util.Map;

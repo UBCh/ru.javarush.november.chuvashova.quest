@@ -1,4 +1,4 @@
-package quest.repositories;
+package com.example.quest.repositories;
 
 import java.sql.*;
 import java.util.HashMap;

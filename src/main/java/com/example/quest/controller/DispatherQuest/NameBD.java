@@ -1,4 +1,4 @@
-package quest.controller.DispatherQuest;
+package com.example.quest.controller.DispatherQuest;
 
 public enum NameBD {
 

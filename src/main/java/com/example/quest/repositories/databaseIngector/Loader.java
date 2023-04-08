@@ -1,6 +1,6 @@
-package quest.repositories.databaseIngector;
+package com.example.quest.repositories.databaseIngector;
 
-import quest.controller.DispatherQuest.NameBD;
+import com.example.quest.controller.DispatherQuest.NameBD;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -41,11 +41,11 @@ public class Loader {
 
     private String getStringRequest(){
 	switch (nameBD){
-	    case BD_QUEST -> {
+	    case BD_QUEST: {
 		return "SELECT * FROM `bd_quest`";
 	    }
-	    case BD_QUEST2 ->{return "SELECT * FROM `bd_quest2`";}
-	    case BD_QUEST3 ->{return "SELECT * FROM `bd_quest3`";}
+	    case BD_QUEST2 :{return "SELECT * FROM `bd_quest2`";}
+	    case BD_QUEST3:{return "SELECT * FROM `bd_quest3`";}
 	}
 	return null;
     }
